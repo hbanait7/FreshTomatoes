@@ -1,2 +1,9 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+<p><%= @movie.title %></p>
+<p>Release Date: <%= @movie.release_date %></p>
+<p>Genre: <%= @movie.genre %></p>
+<p>Directed By: <%= @movie.director %></p>
+<p>Cast: <%= @movie.actors %></p>
+<p>Summary: <%= @movie.description %></p>
+
+<p><%= link_to 'Edit', edit_movie_path %></p>
+<p><%= link_to 'Delete', movie_path, method: :delete, data: { confirm: 'Are you sure?' } %></p>

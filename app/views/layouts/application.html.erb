@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<header>
+  <span><%= link_to 'Home', root_path %></span>
+  <span><%= link_to 'Add Movie', new_movie_path %></span>
+</header>
+
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% elsif flash[:alert] %>
+  <%= flash[:alert] %>
+<% end %>
+
 <%= yield %>
 
 </body>
