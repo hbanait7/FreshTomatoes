@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :movies
 
-  resources :users, [:show, :create]
+  resources :users, only: [:show, :create]
 
   get '/signup' => 'users#new'
 
