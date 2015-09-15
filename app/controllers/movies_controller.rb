@@ -2,6 +2,8 @@ class MoviesController < ApplicationController
 
   before_filter :set_movie, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate, except: [:index, :show]
+
   def index
     @movies = Movie.all
   end
@@ -57,4 +59,15 @@ class MoviesController < ApplicationController
     params.require(:movie).permit(:title, :release_date, :genre, :description, :director, :actors)
   end
 
+  def authenticate
+    unless logged_in?
+      flash[:alert] = 'You Must Sign In First'
+      redirect_to login_path
+    end
+  end
+
 end
+
+
+
+
