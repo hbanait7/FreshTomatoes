@@ -1,1 +1,9 @@
 <h1><%= @user.name %>'s Profile</h1>
+
+Movies Created:
+
+<% if @user.created_movies.any? %>
+  <% @user.created_movies.each do |movie| %>
+    <p><%= link_to movie.title, movie_path(movie) %></p>
+  <% end %>
+<% end %>

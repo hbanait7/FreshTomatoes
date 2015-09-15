@@ -1,4 +1,4 @@
-class Movie < ActiveRecord::Base
+ class Movie < ActiveRecord::Base
 
   validates :title, :release_date, :genre, :director, :actors, presence: true
 
