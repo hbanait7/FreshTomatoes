@@ -56,6 +56,7 @@ group :development, :test do
   gem 'pry-awesome_print'
   gem 'awesome_print'
 
+  gem 'carrierwave'
 
 end
 
