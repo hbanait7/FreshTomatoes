@@ -8,5 +8,6 @@ class Movie < ActiveRecord::Base
 
   belongs_to :creator, class_name: 'User'
 
+  mount_uploader :poster, PosterUploader
 
 end
