@@ -1,38 +1,46 @@
-<%= form_for @movie do |f| %>
-
-  <% if @movie.errors.any? %>
-
-    <h3>Please fix the following <%= pluralize(@movie.errors.count, 'error') %>:</h3>
-
-    <ul>
-      <% @movie.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-
-  <% end %>
-
-  <%= f.label :title %>:
-  <%= f.text_field :title %><br />
-
-  <%= f.label :genre %>:
-  <%= f.text_field :genre %><br />
-
-  <%= f.label :release_date %>:
-  <%= f.date_field :release_date %><br />
-
-  <%= f.label :director %>:
-  <%= f.text_field :director %><br />
-
-  <%= f.label :actors %>:
-  <%= f.text_field :actors %><br />
-
-  <%= f.label :poster %>:
-  <%= f.file_field :poster %><br /> 
-
-  <%= f.label :description %>:<br />
-  <%= f.text_area :description, size: '60x10' %><br />
-
-  <%= f.submit 'Submit' %> 
-
+<% if @movie.errors.any? %>
+<div id="errors_box">
+  <h3>Please fix the following <%= pluralize(@movie.errors.count, 'error') %>:</h3>
+  <ul>
+    <% @movie.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
 <% end %>
+</div>
+
+<div class="add_movie_form_box">
+  <div id="add_movie_form">
+    <h1 id="add_movie_h1"><%= yield(:title) %></h1>
+    <%= form_for @movie do |f| %>
+
+
+      <%= f.label :title %>:
+      <%= f.text_field :title, :class => 'form_field' %><br /><br />
+
+      <%= f.label :genre %>:
+      <%= f.text_field :genre, :class => 'form_field' %><br /><br />
+
+      <%= f.label :director %>:
+      <%= f.text_field :director, :class => 'form_field' %><br /><br />
+
+      <%= f.label :actors %>:
+      <%= f.text_field :actors, :class => 'form_field' %><br /><br />
+
+      <%= f.label :release_date %>:<br />
+      <%= f.date_field :release_date, :class => 'form_release' %><br /><br />
+
+      <%= f.label :poster %>:
+      <%= f.file_field :poster, :class => 'form_poster' %><br /><br />
+
+      <%= f.label :description %>:<br />
+      <%= f.text_area :description, :class => 'form_description' %><br /><br />
+
+      <%= f.submit 'Submit', :class => 'submit_button' %>
+
+    <% end %>
+  </div>
+</div>
+
+
+

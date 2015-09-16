@@ -17,4 +17,12 @@ module SessionsHelper
     @current_user = nil
   end
 
+  # def redirect_to_back(default = user_path(user)) send them back to add movie page
+  #   if !request.env["HTTP_REFERER"].blank? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
+  #     redirect_to :back
+  #   else
+  #     redirect_to default
+  #   end
+  # end
+
 end

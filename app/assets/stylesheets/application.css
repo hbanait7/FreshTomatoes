@@ -15,8 +15,270 @@
  */
 
 
-/* Prevents extra line from appearing when errors are displayed */
+/* Prevents extra line from appearing when errors are displayed in forms*/
 
 div.field_with_errors {
   display: inline;
 }
+
+
+body {
+    background-color: #EEE;
+}
+
+
+/* Header */
+
+#header {
+  border: 1px solid black;
+  height: 52px;
+  background: #3A9425;
+}
+
+#header img {
+  height: 52px;
+  float: left;
+  margin-right: 8px;
+}
+
+#header a {
+  color: white;
+}
+
+#header a:hover {
+  color: black;
+}
+
+#logout_link, #profile_link, #signup_link, #login_link {
+  float: right;
+  border: 2px solid black;
+  margin: 8px 5px 0 5px;
+  padding: 5px;
+}
+
+#add_movie_link {
+  float: left;
+  border: 2px solid black;
+  margin: 8px 5px 0 5px;
+  padding: 5px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+
+
+
+
+/* Flash Messages */
+
+#notice {
+  background: #8CC152;
+  border: 1px solid black;
+  border-radius: 25px;
+  width: 40%;
+  padding: 7px;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 30px;
+}
+
+#alert {
+  background: #DA4453;
+  border: 1px solid black;
+  border-radius: 25px;
+  width: 40%;
+  padding: 7px;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Forms */
+
+.signup_form_box {
+  margin: auto;
+  margin-top: 25px;
+  border: 2px solid black;
+  width: 50%;
+  height: 500px;
+  background: white;
+}
+
+#signup_form {
+  /*border: 2px solid black;*/
+  width: 75%;
+  height: 430px;
+  margin: auto;
+  margin-top: 30px; 
+}
+
+.form_field {
+  height: 20px;
+  width: 99%;
+  border-radius: 5px;
+  border: 2px solid black;
+  font-size: 20px;
+}
+
+.submit_button {
+  border: 2px solid black;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  background: #3A9425;
+}
+
+.submit_button:hover {
+  color: black;
+}
+
+#signup_h1 {
+  color: #3A9425;
+}
+
+#errors_box {
+  width: 50%;
+  margin: auto;
+}
+
+
+
+
+.login_form_box {
+  margin: auto;
+  margin-top: 25px;
+  border: 2px solid black;
+  width: 50%;
+  height: 350px;
+  background: white;
+}
+
+#login_form {
+  width: 75%;
+  height: 430px;
+  margin: auto;
+  margin-top: 30px;  
+}
+
+#login_h1 {
+  color: #3A9425;
+}
+
+
+
+
+.add_movie_form_box {
+  margin: auto;
+  margin-top: 25px;
+  border: 2px solid black;
+  width: 50%;
+  height: 825px;
+  background: white;
+}
+
+#add_movie_form {
+  width: 75%;
+  height: 430px;
+  margin: auto;
+  margin-top: 30px; 
+}
+
+.form_description {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: 2px solid black;
+  resize: none;
+}
+
+.form_release {
+  height: 20px;
+  width: 40%;
+  border-radius: 5px;
+  border: 2px solid black;
+  font-size: 20px;
+}
+
+#add_movie_h1 {
+  color: #3A9425;
+}
+
+
+
+
+
+
+
+/* Movie Show Page */
+
+#show_page_container {
+  /*border: 1px solid black;*/
+  margin-top: 20px;
+}
+
+#show_page_info {
+  /*border: 1px solid black;*/
+  width: 65%;
+  float: right;
+}
+
+/*#movie_title {
+  color: #3A9425;
+  font-size: 30px;
+}*/
+
+#rating {
+  float: right;
+  padding-right: 70px;
+  color: #3A9425;
+  font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

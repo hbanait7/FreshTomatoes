@@ -1,11 +1,25 @@
-<p><%= image_tag @movie.poster_url, size: '400x400' %></p>
-<i>Created By: <%= link_to @movie.creator.name, user_path(@movie.creator) %></i>
-<p><%= @movie.title %></p>
-<p>Release Date: <%= @movie.release_date %></p>
-<p>Genre: <%= @movie.genre %></p>
-<p>Directed By: <%= @movie.director %></p>
-<p>Cast: <%= @movie.actors %></p>
-<p>Summary: <%= @movie.description %></p>
+<div id="show_page_container">
+  <span><%= image_tag @movie.poster_url, size: '400x550' %></span>
 
-<p><%= link_to 'Edit', edit_movie_path %></p>
-<p><%= link_to 'Delete', movie_path, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <div id="show_page_info">
+    <span id="movie_title"><%= @movie.title + " " %></span> <span>(<%= @movie.release_date.strftime("%Y") %>)</span>
+    <span id="rating">Avg. Rating: </span>
+
+    <% if current_user && @movie.creator == current_user %>
+    <div>
+      <span id="edit_link">(<%= link_to 'Edit', edit_movie_path + " " %> |</span>
+      <span id="delete_link"><%= link_to 'Delete', movie_path, method: :delete, data: { confirm: 'Are you sure?' } %>)</span>
+    </div><br />
+    <% end %>
+
+    <i>Created By: <%= link_to @movie.creator.name, user_path(@movie.creator) %></i>
+    <p>Release Date: <%= @movie.release_date.strftime("%B %e") %></p>
+    <p>Genre: <%= @movie.genre %></p>
+    <p>Trailer: </p>
+    <p>Directed By: <%= @movie.director %></p>
+    <p>Cast: <%= @movie.actors %></p>
+    <p>Summary: <%= @movie.description %></p>
+  </div>
+
+  <%= link_to 'Create Review', new_movie_review_path(@movie) %>
+</div>

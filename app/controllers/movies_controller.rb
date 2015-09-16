@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-
+    @review = @movie.reviews.build
   end
 
   def new
@@ -61,10 +61,11 @@ class MoviesController < ApplicationController
 
   def authenticate
     unless logged_in?
-      flash[:alert] = 'You Must Sign In First'
+      flash[:alert] = 'You Must Log In First'
       redirect_to login_path
     end
   end
+
 
 end
 

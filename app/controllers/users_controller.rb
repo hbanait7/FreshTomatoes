@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in(@user)
-      flash[:notice] = 'You Have Successfully Signed Up!'
+      flash[:notice] = 'Signed Up'
       redirect_to user_path(@user)
     else
       flash.now[:alert] = 'Invalid Sign Up Form'
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:notice] = 'You Have Successfully Updated Your Profile!'
+      flash[:notice] = 'Profile Updated!'
       redirect_to user_path(@user)
     else
       flash.now[:alert] = 'Invalid Update Form'

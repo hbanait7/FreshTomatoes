@@ -1,0 +1,26 @@
+<%= form_for([@movie, @review]) do |f| %>
+
+  <% if @review.errors.any? %>
+
+    <h3>Please fix the following <%= pluralize(@review.errors.count, 'error') %>:</h3>
+
+    <ul>
+      <% @review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+
+  <% end %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %><br />
+
+  <%= f.label :rating %>
+  <%= f.number_field :rating, min: 1, max: 10 %><br />
+
+  <%= f.label :content %>
+  <%= f.text_area :content %><br />
+
+  <%= f.submit 'Submit' %>
+
+<% end %>
