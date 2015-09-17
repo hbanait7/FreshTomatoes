@@ -12,7 +12,7 @@
     </div><br />
     <% end %>
 
-    <i>Created By: <%= link_to @movie.creator.name, user_path(@movie.creator) %></i>
+    <p><i>Created By: <%= link_to @movie.creator.name, user_path(@movie.creator) %></i></p>
     <p>Release Date: <%= @movie.release_date.strftime("%B %e") %></p>
     <p>Genre: <%= @movie.genre %></p>
     <p>Trailer: </p>
@@ -21,5 +21,17 @@
     <p>Summary: <%= @movie.description %></p>
   </div>
 
+</div>
+  
+<div>
   <%= link_to 'Create Review', new_movie_review_path(@movie) %>
+
+  <% if @movie.reviews.any? %>
+  <% @movie.reviews.each do |review| %>
+    <p><%= review.title %></p>
+    <p><%= review.rating %></p>
+    <p><%= review.content %></p>
+  <% end %>
+<% end %>
+
 </div>

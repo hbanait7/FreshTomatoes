@@ -2,13 +2,10 @@
 
 <div>
   <% @movies.each do |movie| %>
-    <div>
-      <p><%= link_to movie.title, movie_path(movie) %></p>
-      <p><%= movie.release_date %></p>
-      <p><%= movie.genre %></p>
-      <p><%= movie.director %></p>
-      <p><%= movie.actors %></p>
-      <p><%= movie.description %></p>
+    <div id="movie_poster_wrapper">
+      <p id="movie_title"><%= movie.title %></p>
+      <p id="movie_poster"><%= link_to image_tag(movie.poster_url(:thumb)), movie_path(movie) %></p>
+      <p id="movie_poster_release"><%= movie.release_date.strftime('%b %d, %Y') %></p>
     </div>
   <% end %>
 </div>

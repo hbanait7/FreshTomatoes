@@ -36,6 +36,10 @@ class PosterUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [250, 450]
   end
 
+  # version :large do
+  #   process :resize_to_fit => 
+  # end
+
   #  version :large do
   #   process resize_to_limit: [800, 800]
   # end

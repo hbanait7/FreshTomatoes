@@ -1,9 +1,28 @@
-<h1><%= @user.name %>'s Profile</h1>
+<h1 id="user_profile_heading"><%= @user.name %>'s Profile</h1>
 
-Movies Created:
-
-<% if @user.created_movies.any? %>
-  <% @user.created_movies.each do |movie| %>
-    <p><%= link_to movie.title, movie_path(movie) %></p>
+<div id="movies_created_wrapper">
+  <span id="movies_created_heading">Movies Created:</span>
+  <% if @user.created_movies.any? %>
+    <% @user.created_movies.each do |movie| %>
+      <p><%= link_to movie.title, movie_path(movie) %></p>
+    <% end %>
+  <% else %>
+    <p><i>No Movies Created</i></p>
   <% end %>
-<% end %>
+</div>
+
+<hr id="hr">
+
+<div id="movies_reviewed_wrapper">
+  <span id="reviews_created_heading">Reviews Created:</span>
+
+  <% if @user.reviewed_movies.any? %>
+    <% @user.reviewed_movies.each do |review| %>
+      <p><%= review.title %></p>
+      <p><%= review.rating %></p>
+      <p><%= review.content %></p>
+    <% end %>
+  <% else %>
+    <p><i>No Reviews Created</i></p>
+  <% end %>
+</div>

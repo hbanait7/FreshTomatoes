@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
   has_many :created_movies, foreign_key: 'creator_id', class_name: 'Movie'
 
-  has_many :reviewed_movies, foreign_key: 'reviewer_id', :through => 'Review'
+  has_many :reviewed_movies, foreign_key: 'reviewer_id', class_name: 'Review'
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

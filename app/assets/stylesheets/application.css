@@ -104,6 +104,35 @@ a:link {
 
 
 
+/* Main Page */
+
+#movie_poster_wrapper {
+  border: 1px solid black;
+  padding: 5px;
+  width: 250px;
+}
+
+#movie_title {
+  /*border: 1px solid black;*/
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #3A9425;
+}
+
+#movie_poster {
+  margin-bottom: 5px;
+}
+
+#movie_poster_release {
+  margin: auto;
+  width: 50%;
+  /*border: 1px solid black;*/
+  text-align: center;
+}
+
+
 
 
 
@@ -261,9 +290,29 @@ a:link {
 
 
 
+/* Users Show Page */
 
+#user_profile_heading {
+  text-align: center;
+}
 
+#movies_created_wrapper, #movies_reviewed_wrapper {
+  /*border: 1px solid black;*/
+  width: 700px;
+}
 
+#movies_created_heading, #reviews_created_heading {
+  color: #3A9425;
+}
+
+#hr {
+  width: 700px;
+  margin-left: 0px;
+}
+
+#movies_reviewed_wrapper {
+  margin-top: 20px;
+}
 
 
 
