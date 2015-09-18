@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+  // $('#notice').fadeOut(1000).delay(4000);
+  
+  setTimeout(function() {
+   $('#alert').fadeOut() 
+  }, 2000);
+  
+  setTimeout(function() {
+   $('#notice').fadeOut() 
+  }, 2000);
+  
+});

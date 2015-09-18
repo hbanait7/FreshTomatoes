@@ -8,4 +8,6 @@ class Review < ActiveRecord::Base
 
   belongs_to :reviewer, class_name: 'User'
 
+  scope :recent, -> { order(created_at: :desc) }
+
 end

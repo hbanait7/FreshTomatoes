@@ -3,7 +3,7 @@
 
   <div id="show_page_info">
     <span id="movie_title"><%= @movie.title + " " %></span> <span>(<%= @movie.release_date.strftime("%Y") %>)</span>
-    <span id="rating">Avg. Rating: </span>
+    <!-- <span id="rating">Avg. Rating:<%=  %> </span> -->
 
     <% if current_user && @movie.creator == current_user %>
     <div>
@@ -22,16 +22,26 @@
   </div>
 
 </div>
+
   
-<div>
-  <%= link_to 'Create Review', new_movie_review_path(@movie) %>
+<div id="review_wrapper">
+  <span id="create_review_heading">Reviews:</span>
+  <span id="add_new_review_link"><%= link_to 'Add New Review', new_movie_review_path(@movie) %></span>
 
   <% if @movie.reviews.any? %>
-  <% @movie.reviews.each do |review| %>
-    <p><%= review.title %></p>
-    <p><%= review.rating %></p>
-    <p><%= review.content %></p>
+    <% @movie.reviews.recent.each do |review| %>
+      <div id="each_review_container">
+        <span><%= link_to @movie.creator.name, user_path(@movie.creator) %> | </span>
+        <span id="time"><%= review.created_at.try(:strftime,'%b %d, %Y') %></span>
+        <p>Rating:  <%= review.rating %>/10</p>
+        <!-- <p><%= review.title %></p> -->
+        <p><%= review.content %></p>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
 
 </div>
+
+
+
+

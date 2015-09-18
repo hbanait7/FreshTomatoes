@@ -10,4 +10,12 @@
 
   mount_uploader :poster, PosterUploader
 
+  def avg_rating(movie)
+    movie.reviews.each do |review|
+      puts review.rating
+    end
+  end
+
+
 end
+

@@ -1,10 +1,10 @@
-<h1>Now Playing</h1>
+<h1 id="now_playing">Now Playing</h1>
 
 <div>
   <% @movies.each do |movie| %>
     <div id="movie_poster_wrapper">
-      <p id="movie_title"><%= movie.title %></p>
-      <p id="movie_poster"><%= link_to image_tag(movie.poster_url(:thumb)), movie_path(movie) %></p>
+      <p id="movie_title_main_page"><%= movie.title %></p>
+      <p id="movie_poster"><%= link_to image_tag(movie.poster_url, size: '250x250'), movie_path(movie) %></p>
       <p id="movie_poster_release"><%= movie.release_date.strftime('%b %d, %Y') %></p>
     </div>
   <% end %>
