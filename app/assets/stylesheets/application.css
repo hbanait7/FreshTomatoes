@@ -111,8 +111,19 @@ a:link {
 
 /* Main Page */
 
-#now_playing {
+#wrapper {
+/*  border: 1px solid black;*/
+}
+
+#now_playing_section {
+/*  border: 1px solid black;*/
+  width: 70%;
+  display: inline-block;
+}
+
+#now_playing_header {
   margin-bottom: 0;
+  text-align: center;
 }
 
 #movie_poster_wrapper {
@@ -121,7 +132,7 @@ a:link {
   width: 200px;
   height: 355px;
   display: inline-block;
-  margin: 80px 0  0 80px;
+  margin: 60px 0  0 60px;
 }
 
 #movie_title_main_page {
@@ -149,6 +160,20 @@ a:link {
   text-align: center;
 }
 
+#coming_soon_section {
+  width: 25%;
+  float: right;
+  margin-right: 60px;
+}
+
+#coming_soon_header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#cs_each_movie {
+  text-align: center;
+}
 
 
 
@@ -238,7 +263,7 @@ a:link {
   margin-top: 25px;
   border: 2px solid black;
   width: 50%;
-  height: 825px;
+  height: 900px;
   background: white;
 }
 
@@ -288,15 +313,19 @@ a:link {
   float: right;
 }
 
-#rating {
+/*#rating {
   float: right;
   padding-right: 70px;
   color: #3A9425;
   font-size: 30px;
-}
+}*/
 
 #review_wrapper {
   /*border: 1px solid black;*/
+}
+
+#review_message {
+  margin: 10px;
 }
 
 #create_review_heading {

@@ -10,12 +10,13 @@
 
   mount_uploader :poster, PosterUploader
 
-  def avg_rating(movie)
-    movie.reviews.each do |review|
-      puts review.rating
-    end
-  end
+  scope :now_playing, -> { where("release_date between ? and ?", Date.today - 1.month, Date.today) }
 
+  scope :coming_soon, -> { where("release_date between ? and ?", Date.today + 1.day, Date.today + 1.month) }
+
+  def now_playing
+    release_date.between?(Date.today - 1.month, Date.today)
+  end
 
 end
 

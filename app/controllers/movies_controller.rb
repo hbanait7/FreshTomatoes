@@ -5,11 +5,12 @@ class MoviesController < ApplicationController
   before_filter :authenticate, except: [:index, :show]
 
   def index
-    @movies = Movie.all
+    @now_playing = Movie.all.order('created_at DESC').now_playing
+    @coming_soon = Movie.all.order('created_at DESC').coming_soon
   end
 
   def show
-    @review = @movie.reviews.build
+    @review = @movie.reviews.order('created_at DESC').build
   end
 
   def new
@@ -56,7 +57,7 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :release_date, :genre, :description, :director, :actors, :poster)
+    params.require(:movie).permit(:title, :release_date, :genre, :description, :director, :actors, :poster, :trailer)
   end
 
   def authenticate

@@ -1,6 +1,6 @@
 class Review < ActiveRecord::Base
 
-  validates :title, :rating, :content, presence: true
+  validates :rating, :content, presence: true
 
   validates :content, length: { minimum: 6 }
 
@@ -8,6 +8,6 @@ class Review < ActiveRecord::Base
 
   belongs_to :reviewer, class_name: 'User'
 
-  scope :recent, -> { order(created_at: :desc) }
+  # scope :recent, -> { order(created_at: :desc) }
 
 end
