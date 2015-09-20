@@ -1,5 +1,5 @@
 <%= form_for([@movie, @review]) do |f| %>
-
+<div id="errors_box">
   <% if @review.errors.any? %>
 
     <h3>Please fix the following <%= pluralize(@review.errors.count, 'error') %>:</h3>
@@ -9,15 +9,19 @@
         <li><%= msg %></li>
       <% end %>
     </ul>
-
   <% end %>
+</div>
 
-  <%= f.label :rating %>
-  <%= f.number_field :rating, min: 1, max: 10 %><br />
+<div id="add_review_form_box">
+  <div id="add_review_form">
+  <h1 id="add_review_h1">Add Review</h1>
 
-  <%= f.label :content %>
-  <%= f.text_area :content %><br />
+    <%= f.label :rating %>:<br />
+    <%= f.number_field :rating, min: 1, max: 10, :class => 'rating_field' %><br /><br />
 
-  <%= f.submit 'Submit' %>
+    <%= f.label :content %>:<br />
+    <%= f.text_area :content, :class => 'form_description' %><br /><br />
+
+    <%= f.submit 'Submit', :class => 'submit_button' %>
 
 <% end %>

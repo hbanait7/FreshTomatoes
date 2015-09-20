@@ -25,12 +25,12 @@
 
   
 <div id="review_wrapper">
-  <span id="create_review_heading">Reviews:</span>
   <!-- <span id="add_new_review_link"><%= link_to 'Add New Review', new_movie_review_path(@movie) %></span> -->
 
   <% if @movie.now_playing %>
-    <% if @movie.reviews.any? %>
-      <% @movie.reviews.each do |review| %>
+    <% if @reviews.any? %>
+    <span id="create_review_heading">Reviews:</span>
+      <% @reviews.each do |review| %>
         <div id="each_review_container">
           <span><%= link_to @movie.creator.name, user_path(@movie.creator) %> | </span>
           <span id="time"><%= review.created_at.try(:strftime,'%b %d, %Y') %></span>
@@ -38,6 +38,7 @@
           <p><%= review.content %></p>
         </div>
       <% end %>
+      <div class="digg_pagination_reviews"><%= will_paginate @reviews %></div>
     <% else %>
       <span id="review_message">No Reviews yet!</span>
       <span id="add_new_review_link"><%= link_to 'Add New Review', new_movie_review_path(@movie) %></span>

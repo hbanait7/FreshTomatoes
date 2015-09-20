@@ -60,6 +60,8 @@ group :development, :test do
 
   gem "mini_magick"
 
+  gem 'will_paginate'
+
 end
 
 

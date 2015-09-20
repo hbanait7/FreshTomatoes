@@ -1,6 +1,6 @@
 <div id="wrapper">
   <div id="now_playing_section">
-    <h1 id="now_playing_header">Now Playing</h1>  
+    <h1 id="now_playing_header">Now Playing</h1>
       <% @now_playing.each do |movie| %>
         <div id="movie_poster_wrapper">
           <p id="movie_title_main_page"><%= movie.title %></p>
@@ -17,6 +17,8 @@
         <div id="cs_each_movie"><%= link_to movie.title, movie_path(movie) %> - <%= movie.release_date.strftime('%b %d, %Y') %> </div><br />
       <% end %>
   </span>
+
+<div class="digg_pagination"><%= will_paginate @now_playing %></div>
 
 </div>
 
