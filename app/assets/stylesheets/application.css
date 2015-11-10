@@ -137,8 +137,8 @@ a:link {
 
 #movie_title_main_page {
   /*border: 1px solid black;*/
-  margin: auto;
-  width: 50%;
+  margin: 0;
+  width: 100%;
   text-align: center;
   margin-bottom: 15px;
   color: #3A9425;
@@ -397,6 +397,7 @@ a:link {
 #show_page_info {
   width: 65%;
   float: right;
+  margin-right: 150px;
 }
 
 /*#rating {
