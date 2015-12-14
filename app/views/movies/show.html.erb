@@ -27,7 +27,11 @@
 
   <% if @movie.now_playing %>
     <% if @reviews.any? %>
-    <span id="create_review_heading">Reviews:</span>
+    <span id="review_heading">Reviews:</span>
+    <% if current_user %>  
+      <span id="add_review_heading"><%= link_to 'Add Review', new_movie_review_path(@movie) %></span>
+    <% end %>
+      
       <% @reviews.each do |review| %>
         <div id="each_review_container">
           <span><%= link_to review.reviewer.name, user_path(review.reviewer) %></span>

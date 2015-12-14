@@ -1,28 +1,35 @@
-== README
+This simple application allows authenticated users to leave reviews for movies that are currently in theatres. Users can view movies in the 'coming soon' section but they will not be able to leave a review. Authenticated users can create a movie and include a trailer and movie poster. All trailers were taken from www.youtube.com.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+You will need to migrate the database and load the seeds file.
 
-Things you may want to cover:
+The styling for the application was done on a 13" macbook on 100% zoom in chrome. 
 
-* Ruby version
+List of gems:
 
-* System dependencies
+Rails version '4.2.2'
 
-* Configuration
+gem 'bcrypt'
+# Used on user model to create password
 
-* Database creation
+gem 'better_errors'
+# Provides a little more information when encountering an error. 
 
-* Database initialization
+gem 'quiet_assets'
+# Remove extra messages from your development log
 
-* How to run the test suite
+gem 'pry'
+gem 'pry-rails'
+gem 'pry-doc'
+gem 'pry-awesome_print'
+gem 'awesome_print'
+# This combination of gems makes inspecting inspect objects in your console a lot easier. 
 
-* Services (job queues, cache servers, search engines, etc.)
+gem 'will_paginate'
+# Allow a certain number of posts per page
 
-* Deployment instructions
+gem 'carrierwave'
+# Allows you to upload files
 
-* ...
+gem "mini_magick"
+# Make different picture sizes
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

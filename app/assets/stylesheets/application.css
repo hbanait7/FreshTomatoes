@@ -397,7 +397,7 @@ a:link {
 #show_page_info {
   width: 65%;
   float: right;
-  margin-right: 150px;
+  margin-right: 10px;
 }
 
 /*#rating {
@@ -415,7 +415,7 @@ a:link {
   margin: 10px;
 }
 
-#create_review_heading {
+#review_heading {
   font-size: 30px;
   margin-left: 10px;
 }
